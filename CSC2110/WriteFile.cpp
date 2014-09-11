@@ -1,6 +1,6 @@
 #include "WriteFile.h"
 #include <sstream>
-
+using namespace CSC2110;
 WriteFile::WriteFile(const char* file_name)
 {
    output_file = new ofstream();
