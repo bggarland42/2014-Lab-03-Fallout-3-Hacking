@@ -6,13 +6,45 @@ using namespace std;
 
 
 
+Password::Password()
+{
+    ListArray<String>* viable_words = new ListArray();
 
+    all_words = new ListArray();
 
+    len = 0;
 
+ }
 
+Password::~Password()
+{
 
+ }
 
+void Password::addWord(String* word)
+{
 
+ }
+
+void Password::guess(int try_password, int num_matches)
+{
+
+ }
+
+int Password::getNumberOfPasswordsLeft();
+{
+
+ }
+
+void Password::displayViableWords();
+{
+ 
+ }
+
+String* Password::getOriginalWord(int index)
+{
+
+ }
 
 
 int Password::bestGuess()
