@@ -92,6 +92,20 @@ void Password::guess(int try_password, int num_matches)
 
    for(int i = 1; i <= all_words_size; i++)
    { 
+     String* comparison_word = all_words->get(i);
+     
+     int matches = getNumMatches(guessed_word, comparison_word);
+
+     if(num_matches == matches)
+     {
+       }
+
+     else
+     {
+       viable_words->remove(i);
+
+      }
+
 
 
      }
@@ -101,16 +115,20 @@ void Password::guess(int try_password, int num_matches)
 
 int Password::getNumberOfPasswordsLeft()
 {
+   int viable_words_size = viable_words->size();
 
+   return viable_words_size;
  }
 
 void Password::displayViableWords()
 {
  
+
  }
 
 String* Password::getOriginalWord(int index)
 {
+
 
  }
 
