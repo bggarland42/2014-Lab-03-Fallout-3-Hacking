@@ -74,6 +74,7 @@ template < class T >
 void ListArray<T>::add(T* item)
 {
    add(sz + 1, item);  //add the item to the end of the array list
+   sz++;
 }
 
 template < class T >

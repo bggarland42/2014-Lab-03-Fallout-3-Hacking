@@ -57,6 +57,7 @@ void Password::addWord(String* word)
      all_words->add(word);
     
      viable_words->add(word);
+      
     }
 
 
@@ -85,8 +86,15 @@ int Password::getNumMatches(String* curr_word, String* word_guess)
 
 void Password::guess(int try_password, int num_matches)
 {
-  
+   String* guessed_word = all_words->get(try_password);
 
+   int all_words_size = all_words->size();
+
+   for(int i = 1; i <= all_words_size; i++)
+   { 
+
+
+     }
 
 
  }
