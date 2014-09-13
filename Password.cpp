@@ -51,13 +51,15 @@ void Password::addWord(String* word)
   {
     len = word->length();
     }
+ cout << 1 << endl;
 
   if(len == word->length())
    {
+ cout << 2 << endl;
      all_words->add(word);
-    
+ cout << 3 << endl;
      viable_words->add(word);
-      
+      cout << 4 << endl;
     }
 
 
@@ -122,7 +124,12 @@ int Password::getNumberOfPasswordsLeft()
 
 void Password::displayViableWords()
 {
- 
+  ListArrayIterator<String>* iter = viable_words->iterator();
+  while(iter->hasNext())
+  {
+    String* word = iter->next();
+    word->displayString();
+   }
 
  }
 
@@ -130,6 +137,9 @@ String* Password::getOriginalWord(int index)
 {
 
 
+   String* original_word = all_words->get(index);
+
+   return original_word;
  }
 
 

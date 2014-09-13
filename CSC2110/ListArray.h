@@ -2,6 +2,8 @@
 #define LISTARRAY_H
 
 #include "ListArrayIterator.h"
+#include <iostream>
+
 
 namespace CSC2110
 {
@@ -74,7 +76,7 @@ template < class T >
 void ListArray<T>::add(T* item)
 {
    add(sz + 1, item);  //add the item to the end of the array list
-   sz++;
+
 }
 
 template < class T >
