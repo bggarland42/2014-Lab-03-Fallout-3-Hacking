@@ -3,7 +3,7 @@
 
 #include "ListArrayIterator.h"
 #include <iostream>
-
+using namespace std;
 
 namespace CSC2110
 {
@@ -74,7 +74,7 @@ T* ListArray<T>::get(int index)
 
 template < class T >
 void ListArray<T>::add(T* item)
-{
+{  
    add(sz + 1, item);  //add the item to the end of the array list
 
 }
@@ -92,7 +92,7 @@ void ListArray<T>::add(int index, T* item)
    {
       arrayResize(2*max_size);
    }  
- 
+
    for (int i = sz; i >= index; i--)
    { 
       items[i] = items[i - 1];

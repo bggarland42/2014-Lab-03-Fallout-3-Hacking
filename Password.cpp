@@ -8,11 +8,11 @@ using namespace std;
 
 Password::Password()
 {
-  ListArray<String> viable_words = ListArray<String>();
-
-  ListArray<String> all_words = ListArray<String>();
-
   len = 0;
+  viable_words = new ListArray<String>();
+
+  all_words = new ListArray<String>();
+
  }
 
 Password::~Password()
@@ -51,15 +51,11 @@ void Password::addWord(String* word)
   {
     len = word->length();
     }
- cout << 1 << endl;
 
   if(len == word->length())
    {
- cout << 2 << endl;
      all_words->add(word);
- cout << 3 << endl;
      viable_words->add(word);
-      cout << 4 << endl;
     }
 
 
@@ -92,6 +88,8 @@ void Password::guess(int try_password, int num_matches)
 
    int all_words_size = all_words->size();
 
+   int removedWords = 0;
+
    for(int i = 1; i <= all_words_size; i++)
    { 
      String* comparison_word = all_words->get(i);
@@ -104,7 +102,8 @@ void Password::guess(int try_password, int num_matches)
 
      else
      {
-       viable_words->remove(i);
+       viable_words->remove(i - removedWords);
+       removedWords++;
 
       }
 
@@ -129,6 +128,7 @@ void Password::displayViableWords()
   {
     String* word = iter->next();
     word->displayString();
+    cout << endl;
    }
 
  }
