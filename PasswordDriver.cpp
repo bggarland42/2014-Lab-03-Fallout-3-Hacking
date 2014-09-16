@@ -1,13 +1,10 @@
+//https://github.com/bggarland42/2014-Lab-03-Fallout-3-Hacking
+
 #include "Password.h"
-
 #include "Keyboard.h"
-
 #include "ReadFile.h"
-
 #include "WriteFile.h"
-
 #include "Text.h"
-
 using namespace CSC2110;
 
    //fill in includes, don't forget namespaces
@@ -61,10 +58,9 @@ void guessWords(Password* fh)
       int match = match_str->a_to_i();
       delete match_str;
       cout << endl;
-
+ 
       fh->guess(guess, match);  //1-based index of the guessed word and the number of character matches
       fh->displayViableWords();
-
       numLeft = fh->getNumberOfPasswordsLeft();
    }
 }
@@ -75,4 +71,5 @@ int main()
    addWords(fallout);
    guessWords(fallout);
    delete fallout;
+ cout << endl;
 }

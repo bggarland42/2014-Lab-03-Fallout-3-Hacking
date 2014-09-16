@@ -17,19 +17,6 @@ Password::Password()
 
 Password::~Password()
 {
-   ListArrayIterator<String>* iter = viable_words->iterator();
-   
-   while(iter->hasNext())
-   {
-     String* string = iter->next();
-     delete string;
-     }
-
-    delete iter;
-
-    delete viable_words;
-    viable_words = NULL;
-
    ListArrayIterator<String>* iter_2 = all_words->iterator();  
 
    while(iter_2->hasNext())
@@ -43,6 +30,8 @@ Password::~Password()
     delete all_words;
     all_words = NULL;
 
+    delete viable_words;
+    viable_words = NULL;
  }
 
 void Password::addWord(String* word)
